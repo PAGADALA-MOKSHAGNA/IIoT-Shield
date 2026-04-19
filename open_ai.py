@@ -7,7 +7,8 @@ from google import genai
 
 # ---------- CONFIG ----------
 # Provide API key here for quick testing OR export GEMINI_API_KEY environment variable
-GENAI_API_KEY = os.getenv("GEMINI_API_KEY", "AIzaSyCl9jnVvBQoPItYEBd0sHJepSiylSWzItc")
+with open("LLM_API_Keys.txt", "r") as f:
+    GENAI_API_KEY = f.read().split('"')[3]
 MODEL_NAME = "gemini-2.5-flash"   # change if not available in your account
 
 META_PATH   = "model_meta.json"
